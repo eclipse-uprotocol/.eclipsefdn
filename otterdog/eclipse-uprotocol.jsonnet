@@ -24,34 +24,40 @@ orgs.newOrg('eclipse-uprotocol') {
     },
     orgs.newRepo('uprotocol-core-api') {
       allow_update_branch: false,
+      description: "uProtocol Core uE APIs",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-platform-android-api') {
       allow_update_branch: false,
+      description: "uProtocol Android Platform APIs & Helper Libraries",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-sdk-cpp') {
       allow_update_branch: false,
+      description: "uProtocol C++ SDK",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-sdk-java') {
       allow_update_branch: false,
+      description: "uProtocol Java SDK",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-spec') {
       allow_update_branch: false,
+      description: "uProtocol Specifications",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('uprotocol-website') {
+    orgs.newRepo('uprotocol-sdk-rust') {
       allow_update_branch: false,
-      description: "Uprotocol project website",
+      description: "uProtocol Rust SDK",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
+
   ],
 }
