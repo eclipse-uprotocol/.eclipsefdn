@@ -58,6 +58,23 @@ orgs.newOrg('eclipse-uprotocol') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-
+    orgs.newRepo('uprotocol-sdk-python') {
+      allow_update_branch: false,
+      description: "uProtocol Python SDK",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('uprotocol-platform-simulator') {
+      allow_update_branch: false,
+      description: "uProtocol Platform Simulator",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('uprotocol-platform-android') {
+      allow_update_branch: false,
+      description: "Android uPlatform Implementation",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
   ],
 }
