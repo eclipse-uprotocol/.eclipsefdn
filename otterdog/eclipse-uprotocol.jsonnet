@@ -82,6 +82,5 @@ orgs.newOrg('eclipse-uprotocol') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-
   ],
 }
