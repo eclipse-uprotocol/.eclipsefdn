@@ -29,6 +29,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-ulink-android-java') {
+      aliases: ["uprotocol-platform-android-api"],
       allow_update_branch: false,
       description: "Java uLink Library for Android Binder",
       secret_scanning_push_protection: "disabled",
