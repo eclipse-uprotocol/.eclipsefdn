@@ -28,9 +28,9 @@ orgs.newOrg('eclipse-uprotocol') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('uprotocol-platform-android-api') {
+    orgs.newRepo('uprotocol-ulink-android-java') {
       allow_update_branch: false,
-      description: "uProtocol Android Platform APIs & Helper Libraries",
+      description: "Java uLink Library for Android Binder",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
@@ -79,6 +79,18 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('uprotocol-roadmap') {
       allow_update_branch: false,
       description: "uProtocol Roadmap",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('uprotocol-ulink-zenoh-java') {
+      allow_update_branch: false,
+      description: "Java uLink Library for zenoh transport",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('uprotocol-ulink-zenoh-cpp') {
+      allow_update_branch: false,
+      description: "C++ uLink Library for zenoh transport",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
