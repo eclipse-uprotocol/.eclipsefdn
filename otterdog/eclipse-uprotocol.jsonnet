@@ -16,6 +16,20 @@ orgs.newOrg('eclipse-uprotocol') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
+      value: "pass:bots/automotive.uprotocol/gpg/passphrase",
+    },
+    orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
+      value: "pass:bots/automotive.uprotocol/gpg/secret-subkeys.asc",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
+      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/password",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
+      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/username",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('.github') {
       allow_merge_commit: true,
