@@ -35,7 +35,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-core-api') {
@@ -43,7 +42,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Core uE APIs",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-platform-android') {
@@ -51,14 +49,12 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Android uPlatform Implementation",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-ulink-android-java') {
       aliases: ["uprotocol-platform-android-api"],
       allow_update_branch: false,
       description: "Java uLink Library for Android Binder",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-platform-simulator') {
@@ -66,7 +62,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Platform Simulator",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-roadmap') {
@@ -74,7 +69,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Roadmap",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-sdk-cpp') {
@@ -82,7 +76,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol C++ SDK",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-sdk-java') {
@@ -90,7 +83,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Java SDK",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-sdk-python') {
@@ -98,7 +90,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Python SDK",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-sdk-rust') {
@@ -106,7 +97,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Rust SDK",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-spec') {
@@ -114,31 +104,26 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Specifications",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-roadmap') {
       allow_update_branch: false,
       description: "uProtocol Roadmap",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-ulink-zenoh-java') {
       allow_update_branch: false,
       description: "Java uLink Library for zenoh transport",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-ulink-zenoh-cpp') {
       allow_update_branch: false,
       description: "C++ uLink Library for zenoh transport",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('uprotocol-tools') {
       allow_update_branch: false,
       description: "Collection of tools used by various other projects",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
   ],
