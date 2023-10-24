@@ -48,7 +48,7 @@ orgs.newOrg('eclipse-uprotocol') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           requires_status_checks: true,
-          required_status_checks: [ "eclipse-eca-validation:eclipsefdn/eca", "verify-pr"],
+          required_status_checks+: ["verify-pr"],
           "required_approving_review_count": 1,
         }
       ],
