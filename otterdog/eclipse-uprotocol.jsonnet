@@ -47,9 +47,8 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          requires_status_checks: true,
           required_status_checks+: ["verify-pr"],
-          "required_approving_review_count": 1,
+          required_approving_review_count: 1,
         }
       ],
       workflows+: {
