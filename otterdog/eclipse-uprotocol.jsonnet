@@ -41,8 +41,15 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol Core uE APIs",
+      description: "uProtocol Core APIs and Data Model",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          requires_status_checks: true,
+          required_status_checks: [ "eclipse-eca-validation:eclipsefdn/eca", "verify-pr"],
+          "required_approving_review_count": 1,
+        }
+      ],
     },
     orgs.newRepo('uprotocol-platform-android') {
       allow_merge_commit: true,
