@@ -49,6 +49,7 @@ orgs.newOrg('eclipse-uprotocol') {
         orgs.newBranchProtectionRule('main') {
           required_status_checks+: ["verify-pr"],
           required_approving_review_count: 1,
+          allows_force_pushes: true,
         }
       ],
       workflows+: {
