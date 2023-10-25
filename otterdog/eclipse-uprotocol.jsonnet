@@ -45,12 +45,6 @@ orgs.newOrg('eclipse-uprotocol') {
       delete_branch_on_merge: false,
       description: "uProtocol Core APIs and Data Model",
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_status_checks+: ["verify-pr"],
-          required_approving_review_count: 1,
-        }
-      ],
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
