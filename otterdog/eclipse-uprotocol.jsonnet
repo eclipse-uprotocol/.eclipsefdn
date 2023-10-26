@@ -16,6 +16,9 @@ orgs.newOrg('eclipse-uprotocol') {
     },
   },
   secrets+: [
+    orgs.newOrgSecret('BOT_GITHUB_TOKEN') {
+      value: "pass:bots/automotive.uprotocol/github.com/api-token",
+    },
     orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
       value: "pass:bots/automotive.uprotocol/gpg/passphrase",
     },
