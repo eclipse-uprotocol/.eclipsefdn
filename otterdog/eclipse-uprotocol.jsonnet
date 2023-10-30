@@ -107,6 +107,7 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
     orgs.newRepo('uprotocol-python') {
+      aliases: ["uprotocol-sdk-python"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
