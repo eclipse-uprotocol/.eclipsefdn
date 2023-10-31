@@ -86,21 +86,23 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-sdk-cpp') {
+    orgs.newRepo('uprotocol-cpp') {
+      aliases: ["uprotocol-sdk-cpp"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol C++ SDK",
+      description: "uProtocol Language Specific Library for C++",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-sdk-java') {
+    orgs.newRepo('uprotocol-java') {
+      aliases: ["uprotocol-sdk-java"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol Java SDK",
+      description: "uProtocol Language Specific Library for Java",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -117,11 +119,12 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-sdk-rust') {
+    orgs.newRepo('uprotocol-rust') {
+      aliases: ["uprotocol-sdk-rust"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol Rust SDK",
+      description: "uProtocol Language Specific Library for Rust",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
