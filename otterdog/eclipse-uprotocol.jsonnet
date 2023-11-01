@@ -148,15 +148,17 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-ulink-android-java') {
+    orgs.newRepo('uprotocol-java-ulink-android') {
+      aliases: ["uprotocol-ulink-android-java"],
       allow_update_branch: false,
-      description: "Java uLink Library for Android Binder",
+      description: "Java uLink Library for Android Binder Transport",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
     orgs.newRepo('uprotocol-ulink-zenoh-cpp') {
+      aliases: ["uprotocol-cpp-ulink-zenoh"],
       allow_update_branch: false,
       description: "C++ uLink Library for zenoh transport",
       web_commit_signoff_required: false,
@@ -164,7 +166,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-ulink-zenoh-java') {
+    orgs.newRepo('uprotocol-java-ulink-zenoh') {
+      aliases: ["uprotocol-ulink-zenoh-java"],
       allow_update_branch: false,
       description: "Java uLink Library for zenoh transport",
       web_commit_signoff_required: false,
@@ -172,7 +175,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-ulink-zenoh-python') {
+    orgs.newRepo('uprotocol-python-ulink-zenoh') {
+      aliases: ["uprotocol-ulink-zenoh-python"],
       allow_update_branch: false,
       description: "Python uLink implementation for the Zenoh transport",
       web_commit_signoff_required: false,
