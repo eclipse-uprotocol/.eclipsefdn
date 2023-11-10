@@ -97,6 +97,16 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-kotlin') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for Kotlin",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('uprotocol-java') {
       aliases: ["uprotocol-sdk-java"],
       allow_merge_commit: true,
