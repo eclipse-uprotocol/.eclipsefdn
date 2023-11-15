@@ -200,5 +200,13 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-java-ulink-example') {
+      allow_update_branch: false,
+      description: "Example uLink implementation written in Java that echos the send message back",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    }
   ],
 }
