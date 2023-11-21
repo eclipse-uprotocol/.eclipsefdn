@@ -173,8 +173,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-ulink-zenoh-cpp') {
-      aliases: ["uprotocol-cpp-ulink-zenoh"],
+    orgs.newRepo('uprotocol-cpp-ulink-zenoh') {
+      aliases: ["uprotocol-ulink-zenoh-cpp"],
       allow_update_branch: false,
       description: "C++ uLink Library for zenoh transport",
       web_commit_signoff_required: false,
