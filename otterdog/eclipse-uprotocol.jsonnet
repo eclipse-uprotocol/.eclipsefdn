@@ -16,6 +16,9 @@ orgs.newOrg('eclipse-uprotocol') {
     },
   },
   secrets+: [
+    orgs.newOrgSecret('CRATES_IO_TOKEN') {
+      value: "pass:bots/automotive.uprotocol/crates.io/api-token",
+    },
     orgs.newOrgSecret('BOT_GITHUB_TOKEN') {
       value: "pass:bots/automotive.uprotocol/github.com/api-token",
     },
