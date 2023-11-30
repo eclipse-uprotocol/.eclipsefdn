@@ -215,5 +215,13 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-cpp-ulink-sommr') {
+      allow_update_branch: false,
+      description: "C++ uLink Library for sommr (SOME/IP) transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
   ],
 }
