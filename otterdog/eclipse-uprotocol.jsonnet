@@ -137,7 +137,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Android uPlatform Implementation",
+      description: "Android uPlatform Implementation using Binder uTransport",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -202,6 +202,14 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('uprotocol-tools') {
       allow_update_branch: false,
       description: "Collection of tools used by various other projects",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-platform-linux-zenoh') {
+      allow_update_branch: false,
+      description: "Linux uPlatform that is based off the Zenoh uTransport",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
