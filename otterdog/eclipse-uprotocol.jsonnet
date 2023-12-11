@@ -34,6 +34,9 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
       value: "pass:bots/automotive.uprotocol/oss.sonatype.org/username",
     },
+    orgs.newOrgSecret('PYPI_TOKEN') {
+      value: "pass:bots/automotive.uprotocol/pypi.org/api-token",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
