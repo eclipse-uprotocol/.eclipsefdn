@@ -83,6 +83,30 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-rust-ulink-sommr') {
+      allow_update_branch: false,
+      description: "Rust uLink Library for sommr (SOME/IP) transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-platform-linux') {
+      allow_update_branch: false,
+      description: "Linux uPlatform based off the zenoh communication middleware",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-tck') {
+      allow_update_branch: false,
+      description: "uProtocol Test Compatibility Kit",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('uprotocol-cpp-ulink-zenoh') {
       allow_update_branch: false,
       description: "C++ uLink Library for zenoh transport",
@@ -184,14 +208,6 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('uprotocol-python-ulink-zenoh') {
       allow_update_branch: false,
       description: "Python uLink implementation for the Zenoh transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-roadmap') {
-      allow_update_branch: false,
-      description: "uProtocol Roadmap",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
