@@ -91,6 +91,14 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-rust-ulink-zenoh') {
+      allow_update_branch: false,
+      description: "Rust uLink Library for Zenoh technology",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('uprotocol-platform-linux') {
       allow_update_branch: false,
       description: "Linux uPlatform based off the zenoh communication middleware",
