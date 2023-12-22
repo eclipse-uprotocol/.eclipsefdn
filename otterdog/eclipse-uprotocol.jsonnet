@@ -75,7 +75,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-cpp-ulink-sommr') {
+    orgs.newRepo('uprotocol-cpp-transport-sommr') {
+      aliases: ["uprotocol-cpp-ulink-sommr"],
       allow_update_branch: false,
       description: "C++ uLink Library for sommr (SOME/IP) transport",
       web_commit_signoff_required: false,
@@ -83,7 +84,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-rust-ulink-sommr') {
+    orgs.newRepo('uprotocol-rust-transport-sommr') {
+      aliases: ["uprotocol-rust-ulink-sommr"],
       allow_update_branch: false,
       description: "Rust uLink Library for sommr (SOME/IP) transport",
       web_commit_signoff_required: false,
