@@ -47,7 +47,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-core-api') {
+    orgs.newRepo('up-core-api') {
+      aliases: ["uprotocol-core-api"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -65,7 +66,8 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('uprotocol-cpp') {
+    orgs.newRepo('up-cpp') {
+      aliases: ["uprotocol-cpp"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -75,17 +77,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-cpp-transport-sommr') {
-      aliases: ["uprotocol-cpp-ulink-sommr"],
-      allow_update_branch: false,
-      description: "C++ uLink Library for sommr (SOME/IP) transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-rust-transport-sommr') {
-      aliases: ["uprotocol-rust-ulink-sommr"],
+    orgs.newRepo('up-client-sommr-rust') {
+      aliases: ["uprotocol-rust-ulink-sommr", "uprotocol-rust-transport-sommr"],
       allow_update_branch: false,
       description: "Rust uLink Library for sommr (SOME/IP) transport",
       web_commit_signoff_required: false,
@@ -93,23 +86,17 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-rust-ulink-zenoh') {
+    orgs.newRepo('up-client-zenoh-rust') {
+      aliases: ["uprotocol-rust-ulink-zenoh"],
       allow_update_branch: false,
-      description: "Rust uLink Library for Zenoh technology",
+      description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-platform-linux') {
-      allow_update_branch: false,
-      description: "Linux uPlatform based off the zenoh communication middleware",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-tck') {
+    orgs.newRepo('up-tck') {
+      aliases: ["uprotocol-tck"],
       allow_update_branch: false,
       description: "uProtocol Test Compatibility Kit",
       web_commit_signoff_required: false,
@@ -117,15 +104,17 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-cpp-ulink-zenoh') {
+    orgs.newRepo('up-client-zenoh-cpp') {
+      aliases: ["uprotocol-cpp-ulink-zenoh"],
       allow_update_branch: false,
-      description: "C++ uLink Library for zenoh transport",
+      description: "C++ client library to connect to the zenoh implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-java') {
+    orgs.newRepo('up-java') {
+      aliases: ["uprotocol-java"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -143,31 +132,26 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('uprotocol-java-ulink-android') {
+    orgs.newRepo('up-client-android-java') {
+      aliases: ["uprotocol-java-ulink-android"],
       allow_update_branch: false,
-      description: "Java uLink Library for Android Binder Transport",
+      description: "Java Client Library to connect to the Android implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-java-ulink-example') {
+    orgs.newRepo('up-client-zenoh-java') {
+      aliases: ["uprotocol-java-ulink-zenoh"],
       allow_update_branch: false,
-      description: "Example uLink implementation written in Java that echos the send message back",
+      description: "Java client side Library to connect to the Zenoh implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-java-ulink-zenoh') {
-      allow_update_branch: false,
-      description: "Java uLink Library for zenoh transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-kotlin') {
+    orgs.newRepo('up-kotlin') {
+      aliases: ["uprotocol-kotlin"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -177,35 +161,39 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-platform-android') {
+    orgs.newRepo('up-android') {
+      aliases: ["uprotocol-platform-android"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Android uPlatform Implementation using Binder uTransport",
+      description: "Android Implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-platform-linux-zenoh') {
+    orgs.newRepo('up-zenoh') {
+      aliases: ["uprotocol-platform-linux-zenoh"],
       allow_update_branch: false,
-      description: "Linux uPlatform that is based off the Zenoh uTransport",
+      description: "Zenoh implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-platform-simulator') {
+    orgs.newRepo('up-simulator') {
+      aliases: ["uprotocol-platform-simulator"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol Platform Simulator",
+      description: "Simulator implementation of uProtocol to simulate other implementations (zenoh, android, cloud, etc..)",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-python') {
+    orgs.newRepo('up-python') {
+      aliases: ["uprotocol-python"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -215,7 +203,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-python-ulink-zenoh') {
+    orgs.newRepo('up-client-zenoh-python') {
+      aliases: ["uprotocol-python-ulink-zenoh"],
       allow_update_branch: false,
       description: "Python uLink implementation for the Zenoh transport",
       web_commit_signoff_required: false,
@@ -223,7 +212,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-rust') {
+    orgs.newRepo('up-rust') {
+      aliases: ["uprotocol-rust"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -243,9 +233,9 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-tools') {
+    orgs.newRepo('up-experiments') {
       allow_update_branch: false,
-      description: "Collection of tools used by various other projects",
+      description: "Dumping ground for experiments that are WiP and there is no better home for the code",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
