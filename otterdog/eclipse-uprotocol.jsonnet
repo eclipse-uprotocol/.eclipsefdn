@@ -223,7 +223,8 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-spec') {
+    orgs.newRepo('up-spec') {
+      aliases: ["uprotocol-spec"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
