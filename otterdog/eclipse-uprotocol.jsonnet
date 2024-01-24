@@ -139,6 +139,14 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('up-client-android-kotlin') {
+      allow_update_branch: false,
+      description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('up-client-zenoh-java') {
       aliases: ["uprotocol-java-ulink-zenoh"],
       allow_update_branch: false,
