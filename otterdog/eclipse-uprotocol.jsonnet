@@ -6,6 +6,9 @@ orgs.newOrg('eclipse-uprotocol') {
     description: "",
     name: "Eclipse uProtocol",
     readers_can_create_discussions: true,
+    security_managers+: [
+      automotive-uprotocol-project-leads
+    ],
     two_factor_requirement: false,
     web_commit_signoff_required: false,
     workflows+: {
