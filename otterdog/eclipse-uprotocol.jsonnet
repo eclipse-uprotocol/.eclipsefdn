@@ -40,6 +40,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -51,6 +52,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Specifications",
+      dependabot_security_updates_enabled: true,
       topics: [
         "core",
         "uprotocol",
@@ -66,6 +68,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Core APIs and Data Model",
       topics: [
         "core",
@@ -91,6 +94,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Language Specific Library for Java",
       topics: [
         "core",
@@ -116,6 +120,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Language Specific Library for C++",
       topics: [
         "core",
@@ -142,6 +147,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Language Specific Library for Rust",
       topics: [
         "core",
@@ -170,6 +176,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Language Specific Library for Kotlin",
       topics: [
         "core",
@@ -187,6 +194,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Language Specific Library for Python",
       topics: [
         "core",
@@ -202,6 +210,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-tck') {
       aliases: ["uprotocol-tck"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Test Compatibility Kit",
       web_commit_signoff_required: false,
       workflows+: {
@@ -223,6 +232,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-sommr-rust') {
       aliases: ["uprotocol-rust-ulink-sommr", "uprotocol-rust-transport-sommr"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Rust uPClient Library for sommr (SOME/IP) transport",
       topics: [
         "client",
@@ -239,6 +249,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-zenoh-rust') {
       aliases: ["uprotocol-rust-ulink-zenoh"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
       topics: [
         "rust",
@@ -254,6 +265,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-zenoh-cpp') {
       aliases: ["uprotocol-cpp-ulink-zenoh"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
       topics: [
         "cpp",
@@ -269,6 +281,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-android-java') {
       aliases: ["uprotocol-java-ulink-android"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Java Client Library to connect to the Android implementation of uProtocol",
       topics: [
         "android",
@@ -292,6 +305,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-android-kotlin') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
@@ -302,6 +316,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-zenoh-java') {
       aliases: ["uprotocol-java-ulink-zenoh"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Java client side Library to connect to the Zenoh implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
@@ -311,6 +326,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-mqtt5-rust') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
       workflows+: {
@@ -320,6 +336,7 @@ orgs.newOrg('eclipse-uprotocol') {
     
     orgs.newRepo('up-client-azure-java') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Java client side Library to build uEs that will run on Azure",
       web_commit_signoff_required: false,
       workflows+: {
@@ -329,6 +346,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-android-rust') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Rust client side Library for Android implementation of uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
@@ -344,6 +362,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Android Implementation of Core uBus and uSubscription uProtocol",
       topics: [
         "java",
@@ -370,6 +389,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Android Implementation of uDiscovery service",
       web_commit_signoff_required: false,
       workflows+: {
@@ -389,6 +409,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Android Implementation of uDiscovery service",
       topics: [
         "python",
@@ -406,6 +427,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Android Implementation of uDiscovery service",
       topics: [
         "java",
@@ -431,6 +453,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Implementation of COVESA/HelloWorld Application and Service for Android",
       web_commit_signoff_required: false,
       workflows+: {
@@ -441,6 +464,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-streamer-rust') {
       aliases: ["uprotocol-platform-linux-zenoh", "up-zenoh"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Generic uStreamer implementation written in Rust",
       web_commit_signoff_required: false,
       workflows+: {
@@ -453,6 +477,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Simulator implementation of uProtocol to simulate other implementations (zenoh, android, cloud, etc..)",
       web_commit_signoff_required: false,
       workflows+: {
@@ -463,6 +488,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-zenoh-python') {
       aliases: ["uprotocol-python-ulink-zenoh"],
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Python uPClient implementation for the Zenoh transport",
       topics: [
         "python",
@@ -478,6 +504,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-vsomeip-python') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Python uPClient implementation for SOME/IP using vsomeip",
       topics: [
         "python",
@@ -493,6 +520,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-vsomeip-helloworld') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "COVESA/uServices HelloWorld example for mechatronics hello world uService and client using vsomeip",
       topics: [
         "cpp",
@@ -508,6 +536,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-zenoh-example-rust') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Example code for zenoh using up-client-zenoh-rust",
       topics: [
         "rust",
@@ -523,6 +552,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-experiments') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Dumping ground for experiments that are WiP and there is no better home for the code",
       web_commit_signoff_required: false,
       workflows+: {
@@ -534,6 +564,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "uProtocol Implementation on Kalix",
       web_commit_signoff_required: false,
       workflows+: {
@@ -544,6 +575,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-mqtt5-python') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Python uPClient for MQTT5 to be used by up-simulator and others",
       topics: [
         "python",
@@ -559,6 +591,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-vsomeip-rust') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Rust uPClient for vsomeip (SOME/IP)",
       topics: [
         "rust",
@@ -574,6 +607,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
     orgs.newRepo('up-client-vsomeip-cpp') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "C++ uPClient for vsomeip (SOME/IP)",
       topics: [
         "cpp",
@@ -589,6 +623,7 @@ orgs.newOrg('eclipse-uprotocol') {
 
    orgs.newRepo('up-zenoh-example-cpp') {
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "C++ Example application and service that utilizes up-client-zenoh-cpp",
       topics: [
         "cpp",
