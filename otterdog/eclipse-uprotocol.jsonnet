@@ -454,5 +454,26 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+
+    orgs.newRepo('up-conan-recipes') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Conan recipes for uProtocol C++ libraries",
+      topics+: [
+        "conan",
+        "cpp",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "CI status checks"
+          ],
+        },
+      ],
+    },
   ],
 }
