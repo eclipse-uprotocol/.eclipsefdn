@@ -154,6 +154,17 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-client-mqtt5-java') {
+      allow_update_branch: false,
+      description: "Java uPClient for MQTT5",
+      topics+: [
+        "mqtt5",
+        "java",
+        "up-client",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('up-client-mqtt5-rust') {
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
