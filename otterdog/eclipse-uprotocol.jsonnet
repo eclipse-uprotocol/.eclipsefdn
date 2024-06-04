@@ -214,7 +214,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-zenoh-cpp') {
-      aliases: ["up-client-zenoh-cpp."],
+      aliases: ["up-client-zenoh-cpp"],
       allow_update_branch: false,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
       topics+: [
