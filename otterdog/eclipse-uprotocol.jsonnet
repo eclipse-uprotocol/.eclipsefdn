@@ -109,13 +109,14 @@ orgs.newOrg('eclipse-uprotocol') {
       description: "Implementation of COVESA/HelloWorld Application and Service for Android",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-android-java') {
+    orgs.newRepo('up-transport-android-java') {
+      aliases: ["up-client-android-java"],
       allow_update_branch: false,
       description: "Java Client Library to connect to the Android implementation of uProtocol",
       topics+: [
         "android",
         "java",
-        "up-client",
+        "up-transport",
         "uprotocol"
       ],
       web_commit_signoff_required: false,
@@ -128,98 +129,97 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('up-client-android-kotlin') {
+    orgs.newRepo('up-transport-android-kotlin') {
+      aliases: ["up-client-android-kotlin"],
       allow_update_branch: false,
       description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-android-rust') {
+    orgs.newRepo('up-transport-android-rust') {
+      aliases: ["up-client-android-rust"],
       allow_update_branch: false,
       description: "Rust client side Library for Android implementation of uProtocol",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-azure-java') {
+    orgs.newRepo('up-transport-azure-java') {
+      aliases: ["up-client-azure-java"],
       allow_update_branch: false,
       description: "Java client side Library to build uEs that will run on Azure",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-mqtt5-python') {
+    orgs.newRepo('up-transport-mqtt5-python') {
+      aliases: ["up-client-mqtt5-python"],
       allow_update_branch: false,
       description: "Python uPClient for MQTT5 to be used by up-simulator and others",
       topics+: [
         "mqtt5",
         "python",
-        "up-client",
+        "up-transport",
         "uprotocol"
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-mqtt5-java') {
+    orgs.newRepo('up-transport-mqtt5-java') {
+      aliases: ["up-client-mqtt5-java"],
       allow_update_branch: false,
       description: "Java uPClient for MQTT5",
       topics+: [
         "mqtt5",
         "java",
-        "up-client",
+        "up-transport",
         "uprotocol"
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-mqtt5-rust') {
+    orgs.newRepo('up-transport-mqtt5-rust') {
+      aliases: ["up-client-mqtt5-rust"],
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-sommr-rust') {
-      allow_update_branch: false,
-      description: "Rust uPClient Library for sommr (SOME/IP) transport",
-      topics+: [
-        "client",
-        "rust",
-        "sommr",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-client-vsomeip-cpp') {
+    orgs.newRepo('up-transport-vsomeip-cpp') {
+      aliases: ["up-client-vsomeip-cpp"],
       allow_update_branch: false,
       description: "C++ uPClient for vsomeip (SOME/IP)",
       topics+: [
         "cpp",
-        "up-client",
+        "up-transport",
         "uprotocol",
         "vsomeip"
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-vsomeip-python') {
+    orgs.newRepo('up-transport-vsomeip-python') {
+      aliases: ["up-client-vsomeip-python"],
       allow_update_branch: false,
       description: "Python uPClient implementation for SOME/IP using vsomeip",
       topics+: [
         "python",
-        "up-client",
+        "up-transport",
         "uprotocol",
         "vsomeip"
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-vsomeip-rust') {
+    orgs.newRepo('up-transport-vsomeip-rust') {
+      aliases: ["up-client-vsomeip-rust"],
       allow_update_branch: false,
       description: "Rust uPClient for vsomeip (SOME/IP)",
       topics+: [
         "rust",
-        "up-client",
+        "up-transport",
         "uprotocol",
         "vsomeip"
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-zenoh-cpp') {
+    orgs.newRepo('up-transport-zenoh-cpp') {
+      aliases: ["up-client-zenoh-cpp."],
       allow_update_branch: false,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
       topics+: [
         "cpp",
-        "up-client",
+        "up-transport",
         "uprotocol",
         "zenoh"
       ],
@@ -234,28 +234,25 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
 
     },
-    orgs.newRepo('up-client-zenoh-java') {
-      allow_update_branch: false,
-      description: "Java client side Library to connect to the Zenoh implementation of uProtocol",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-client-zenoh-python') {
+    orgs.newRepo('up-transport-zenoh-python') {
+      aliases: ["up-client-zenoh-python"],
       allow_update_branch: false,
       description: "Python uPClient implementation for the Zenoh transport",
       topics+: [
         "python",
-        "up-client",
+        "up-transport",
         "uprotocol",
         "zenoh"
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-client-zenoh-rust') {
+    orgs.newRepo('up-transport-zenoh-rust') {
+      aliases: ["up-client-zenoh-rust"],
       allow_update_branch: false,
       description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
       topics+: [
         "rust",
-        "up-client",
+        "up-transport",
         "zenoh"
       ],
       web_commit_signoff_required: false,
@@ -433,7 +430,7 @@ orgs.newOrg('eclipse-uprotocol') {
     },
     orgs.newRepo('up-zenoh-example-cpp') {
       allow_update_branch: false,
-      description: "C++ Example application and service that utilizes up-client-zenoh-cpp",
+      description: "C++ Example application and service that utilizes up-transport-zenoh-cpp",
       topics+: [
         "cpp",
         "example",
@@ -444,7 +441,7 @@ orgs.newOrg('eclipse-uprotocol') {
     },
     orgs.newRepo('up-zenoh-example-rust') {
       allow_update_branch: false,
-      description: "Example code for zenoh using up-client-zenoh-rust",
+      description: "Example code for zenoh using up-transport-zenoh-rust",
       topics+: [
         "example",
         "rust",
@@ -454,11 +451,12 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
 
-    orgs.newRepo('up-client-springboot-java') {
+    orgs.newRepo('up-transport-springboot-java') {
+      aliases: ["up-client-springboot-java"],
       allow_update_branch: false,
       description: "Springboot implementation of uProtocol that could be used for development of cloud microservices",
       topics+: [
-        "up-client",
+        "up-transport",
         "springboot",
         "java",
         "uprotocol"
