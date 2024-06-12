@@ -6,6 +6,7 @@ orgs.newOrg('eclipse-uprotocol') {
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
     web_commit_signoff_required: false,
+    members_can_create_teams: true,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
     },
