@@ -508,5 +508,35 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-subscription-rust') {
+      allow_update_branch: false,
+      description: "uSubscription service written in Rust",
+      topics+: [
+        "usubscription",
+        "rust",
+        "uprotocol",
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-subscription-cpp') {
+      allow_update_branch: false,
+      description: "uSubscription service written in C++",
+      topics+: [
+        "usubscription",
+        "cpp",
+        "uprotocol",
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-discovery-cpp') {
+      allow_update_branch: false,
+      description: "uDiscovery service written in C++",
+      topics+: [
+        "udiscovery",
+        "cpp",
+        "uprotocol",
+      ],
+      web_commit_signoff_required: false,
+    },
   ],
 }
