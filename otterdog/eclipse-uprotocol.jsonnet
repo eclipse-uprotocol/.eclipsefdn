@@ -24,10 +24,10 @@ orgs.newOrg('eclipse-uprotocol') {
       value: "pass:bots/automotive.uprotocol/gpg/secret-subkeys.asc",
     },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/password",
+      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/gh-token-password",
     },
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/username",
+      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/gh-token-username",
     },
     orgs.newOrgSecret('PYPI_TOKEN') {
       value: "pass:bots/automotive.uprotocol/pypi.org/api-token",
