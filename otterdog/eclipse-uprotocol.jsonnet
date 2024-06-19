@@ -397,6 +397,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-vsomeip-cpp') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       description: "C++ uPClient for vsomeip (SOME/IP)",
       topics+: [
@@ -430,6 +431,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-zenoh-cpp') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
@@ -487,6 +489,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-zenoh-example-cpp') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       description: "C++ Example application and service that utilizes up-transport-zenoh-cpp",
       topics+: [
