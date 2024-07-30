@@ -319,6 +319,7 @@ orgs.newOrg('eclipse-uprotocol') {
     },
     orgs.newRepo('up-tck') {
       allow_update_branch: false,
+      allow_merge_commit: true,
       code_scanning_default_languages+: [
         "python"
       ],
