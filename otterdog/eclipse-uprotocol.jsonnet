@@ -165,7 +165,19 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "CI status checks"
+          ],
+        },
+        orgs.newBranchProtectionRule('v*.*_up-v*.*.*') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "CI status checks"
+          ],
+        },
+        orgs.newBranchProtectionRule('up-v1.5.7') {
+          required_approving_review_count: 2,
           required_status_checks+: [
             "CI status checks"
           ],
@@ -451,6 +463,12 @@ orgs.newOrg('eclipse-uprotocol') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
+          required_status_checks+: [
+            "CI status checks"
+          ],
+        },
+        orgs.newBranchProtectionRule('v*.*_up-v*.*.*') {
+          required_approving_review_count: 1,
           required_status_checks+: [
             "CI status checks"
           ],
