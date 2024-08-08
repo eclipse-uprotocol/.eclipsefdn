@@ -324,6 +324,7 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-streamer-rust') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       description: "Generic uStreamer implementation written in Rust",
@@ -400,6 +401,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-mqtt5-rust') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
@@ -439,6 +441,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-vsomeip-rust') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Rust uPClient for vsomeip (SOME/IP)",
       topics+: [
@@ -491,6 +494,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-zenoh-rust') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
