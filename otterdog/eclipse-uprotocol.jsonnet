@@ -271,6 +271,11 @@ orgs.newOrg('eclipse-uprotocol') {
         "rust",
         "uprotocol"
       ],
+      variables+: [
+        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "*.{adoc,md} *.rs .github examples src tests tools up-spec/*.{adoc,md} up-spec/basics up-spec/up-l2/api.adoc",
+        },
+      ],
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
