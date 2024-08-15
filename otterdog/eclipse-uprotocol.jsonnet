@@ -614,5 +614,11 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-website') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Main landing page/website for uProtocol",
+      web_commit_signoff_required: false,
+    },
   ]
 }
