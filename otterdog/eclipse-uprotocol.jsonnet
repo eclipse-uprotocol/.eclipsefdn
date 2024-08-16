@@ -40,6 +40,28 @@ orgs.newOrg('eclipse-uprotocol') {
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('eclipse-uprotocol.github.io') {
+      description: "The landing page website for the uProtocol project",
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      delete_branch_on_merge: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+      gh_pages_build_type: "workflow",
+      has_discussions: false,
+      topics+: [
+        "landing-page",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('manifests') {
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
