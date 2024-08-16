@@ -555,17 +555,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-            "deny",
-            "check",
-            "fmt",
-            "clippy",
-            "docu",
-            "feature-check",
-            "nextest",
-            "doctest"
-          ],
+          required_approving_review_count: 0,
         },
       ],
     },
