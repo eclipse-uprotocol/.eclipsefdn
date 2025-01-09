@@ -437,6 +437,14 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
+      variables+: [
+        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "up-spec/up-l1/mqtt_5.adoc",
+        },
+        orgs.newRepoVariable('UP_TRANSPORT_MQTT5_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "*.adoc *.md *.rs .github examples src tests",
+        },
+      ],
     },
     orgs.newRepo('up-transport-springboot-java') {
       allow_update_branch: false,
