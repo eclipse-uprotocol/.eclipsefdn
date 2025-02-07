@@ -42,12 +42,18 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('eclipse-uprotocol.github.io') {
-      description: "The landing page website for the uProtocol project",
       allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
+      description: "The landing page website for the uProtocol project",
+      gh_pages_build_type: "workflow",
       homepage: "https://eclipse-uprotocol.github.io/",
+      topics+: [
+        "landing-page",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -56,18 +62,18 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
           deployment_branch_policy: "selected",
         },
       ],
-      gh_pages_build_type: "workflow",
-      has_discussions: false,
-      topics+: [
-        "landing-page",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('manifests') {
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       description: "Collection of repo manifests for pulling uProtocol projects",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-akka') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Implementation on Kalix",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-android-core') {
@@ -158,9 +164,13 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-core-api') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
       archived: true,
       code_scanning_default_setup_enabled: true,
+      delete_branch_on_merge: false,
       description: "uProtocol Core APIs and Data Model",
+      secret_scanning_push_protection: "disabled",
       topics+: [
         "core",
         "protos",
@@ -201,12 +211,21 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
           ],
         },
         orgs.newBranchProtectionRule('up-v1.5.7') {
-          required_approving_review_count: 2,
           required_status_checks+: [
             "CI status checks"
           ],
         },
       ],
+    },
+    orgs.newRepo('up-discovery-cpp') {
+      allow_update_branch: false,
+      description: "uDiscovery service written in C++",
+      topics+: [
+        "cpp",
+        "udiscovery",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
     },
     orgs.newRepo('up-experiments') {
       allow_update_branch: false,
@@ -229,19 +248,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "verify-pr",
-            "lint"
+            "lint",
+            "verify-pr"
           ],
         },
       ],
-    },
-    orgs.newRepo('up-akka') {
-      aliases: ["up-kalix"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Implementation on Kalix",
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('up-kotlin') {
       allow_merge_commit: true,
@@ -255,6 +266,16 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       topics+: [
         "core",
         "kotlin",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-player-cpp') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "uProtocol Recorder",
+      topics+: [
+        "cpp",
         "uprotocol"
       ],
       web_commit_signoff_required: false,
@@ -273,6 +294,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "python",
         "uprotocol"
       ],
+      web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -281,6 +303,15 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
             "lint"
           ],
         },
+      ],
+    },
+    orgs.newRepo('up-recorder-cpp') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "uProtocol Recorder",
+      topics+: [
+        "cpp",
+        "uprotocol"
       ],
       web_commit_signoff_required: false,
     },
@@ -295,15 +326,15 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "rust",
         "uprotocol"
       ],
-      variables+: [
-        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "up-spec/*.adoc up-spec/*.md up-spec/basics up-spec/up-l1/cloudevents.adoc up-spec/up-l2/api.adoc",
-        },
+      web_commit_signoff_required: false,
+      variables: [
         orgs.newRepoVariable('UP_RUST_OPEN_FAST_TRACE_FILE_PATTERNS') {
           value: "*.adoc *.md *.rs .github examples src tests tools",
         },
+        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "up-spec/*.adoc up-spec/*.md up-spec/basics up-spec/up-l1/cloudevents.adoc up-spec/up-l2/api.adoc",
+        },
       ],
-      web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
@@ -361,15 +392,39 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       code_scanning_default_setup_enabled: true,
       description: "Generic uStreamer implementation written in Rust",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('production'),
+      ],
+    },
+    orgs.newRepo('up-subscription-rust') {
+      allow_update_branch: false,
+      description: "uSubscription service written in Rust",
+      topics+: [
+        "rust",
+        "uprotocol",
+        "usubscription"
+      ],
+      web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+        },
+      ],
     },
     orgs.newRepo('up-tck') {
-      allow_update_branch: false,
       allow_merge_commit: true,
+      allow_update_branch: false,
       code_scanning_default_languages+: [
         "python"
       ],
       code_scanning_default_setup_enabled: true,
       description: "uProtocol Test Compatibility Kit",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-tools') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Repository for code generators and other uProtocol tools",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-android-java') {
@@ -437,7 +492,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
-      variables+: [
+      variables: [
         orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
           value: "up-spec/up-l1/mqtt_5.adoc",
         },
@@ -445,6 +500,21 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
           value: "*.adoc *.md *.rs .github examples src tests",
         },
       ],
+    },
+    orgs.newRepo('up-transport-socket') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Simple socket implementations of uTransport written in C++, Rust, Python, and Java to test uE-2-uE communication",
+      topics+: [
+        "cpp",
+        "java",
+        "python",
+        "rust",
+        "socket",
+        "up-transport",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-springboot-java') {
       allow_update_branch: false,
@@ -579,77 +649,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-subscription-rust') {
-      allow_update_branch: false,
-      description: "uSubscription service written in Rust",
-      topics+: [
-        "usubscription",
-        "rust",
-        "uprotocol",
-      ],
-      web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-        },
-      ],
-    },
-    orgs.newRepo('up-discovery-cpp') {
-      allow_update_branch: false,
-      description: "uDiscovery service written in C++",
-      topics+: [
-        "udiscovery",
-        "cpp",
-        "uprotocol",
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-socket') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      description: "Simple socket implementations of uTransport written in C++, Rust, Python, and Java to test uE-2-uE communication",
-      topics+: [
-        "cpp",
-        "python",
-        "java",
-        "rust",
-        "up-transport",
-        "uprotocol",
-        "socket"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-recorder-cpp') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      description: "uProtocol Recorder",
-      topics+: [
-        "cpp",
-        "uprotocol",
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-player-cpp') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      description: "uProtocol Recorder",
-      topics+: [
-        "cpp",
-        "uprotocol",
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-tools') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      description: "Repository for code generators and other uProtocol tools",
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('ci-cd') {
       allow_merge_commit: false,
       allow_update_branch: false,
       description: "Shared resources for implementing CI/CD pipelines",
       web_commit_signoff_required: false,
     },
-  ]
+  ],
 }
