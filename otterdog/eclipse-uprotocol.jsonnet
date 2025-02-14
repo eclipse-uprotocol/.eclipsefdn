@@ -613,6 +613,14 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "up-transport",
         "zenoh"
       ],
+      variables: [
+        orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "Cargo.toml *.md .github examples src tests",
+        },
+        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "up-spec/up-l1/zenoh.adoc",
+        },
+      ],
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-vsomeip-helloworld') {
