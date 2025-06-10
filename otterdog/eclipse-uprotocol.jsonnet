@@ -22,11 +22,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
     orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
       value: "pass:bots/automotive.uprotocol/gpg/secret-subkeys.asc",
     },
-    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/gh-token-password",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/automotive.uprotocol/central.sonatype.org/token-password",
     },
-    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "pass:bots/automotive.uprotocol/oss.sonatype.org/gh-token-username",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/automotive.uprotocol/central.sonatype.org/token-username",
     },
     orgs.newOrgSecret('PYPI_TOKEN') {
       value: "pass:bots/automotive.uprotocol/pypi.org/api-token",
