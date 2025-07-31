@@ -1,6 +1,17 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
+  rulesets+: [
+    orgs.newOrgRuleset('disable_merge_commits') {
+      include_repo_names: [
+        "~ALL"
+      ],
+      include_refs+: [
+        "~DEFAULT_BRANCH"
+      ],
+      requires_linear_history: true,
+    }
+  ],
   settings+: {
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
