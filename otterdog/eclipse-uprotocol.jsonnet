@@ -1,6 +1,17 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
+  rulesets+: [
+    orgs.newOrgRuleset('disable_merge_commits') {
+      include_repo_names: [
+        "~ALL"
+      ],
+      include_refs+: [
+        "~DEFAULT_BRANCH"
+      ],
+      requires_linear_history: true,
+    }
+  ],
   settings+: {
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
@@ -337,12 +348,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
       variables: [
-        orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "*.adoc *.md *.rs .github examples src tests tools",
-        },
-        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "up-spec/*.adoc up-spec/*.md up-spec/basics up-spec/up-l1/README.adoc up-spec/up-l1/cloudevents.adoc up-spec/up-l2/api.adoc",
-        },
       ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
@@ -502,12 +507,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
       variables: [
-        orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "*.adoc *.md *.rs .github examples src tests",
-        },
-        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "up-spec/basics/uattributes.adoc up-spec/up-l1/README.adoc up-spec/up-l1/mqtt_5.adoc",
-        },
       ],
     },
     orgs.newRepo('up-transport-socket') {
@@ -627,12 +626,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
       variables: [
-        orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "Cargo.toml *.md .github examples src tests",
-        },
-        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "up-spec/basics/uattributes.adoc up-spec/up-l1/README.adoc up-spec/up-l1/zenoh.adoc",
-        },
       ],
     },
     orgs.newRepo('up-vsomeip-helloworld') {
