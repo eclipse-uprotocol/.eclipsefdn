@@ -10,6 +10,18 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "~DEFAULT_BRANCH"
       ],
       requires_linear_history: true,
+    },
+    orgs.newOrgRuleset('pull_request_settings') {
+      include_repo_names: [
+        "~ALL"
+      ],
+      include_refs+: [
+        "~DEFAULT_BRANCH"
+      ],
+      required_pull_request: orgs.newPullRequest() {
+        required_approving_review_count: 1,
+        requires_review_thread_resolution: true
+      },
     }
   ],
   settings+: {
@@ -45,7 +57,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -58,7 +69,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('eclipse-uprotocol.github.io') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -86,14 +96,12 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-akka') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Implementation on Kalix",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-android-core') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -107,7 +115,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
           required_status_checks+: [
             "build"
           ],
@@ -115,7 +122,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-android-discovery') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -123,7 +129,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
           required_status_checks+: [
             "build"
           ],
@@ -131,7 +136,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-android-example') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -144,7 +148,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
           required_status_checks+: [
             "build"
           ],
@@ -152,7 +155,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-android-helloworld') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -160,7 +162,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-conan-recipes') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Conan recipes for uProtocol C++ libraries",
@@ -180,7 +181,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-core-api') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       archived: true,
       code_scanning_default_setup_enabled: true,
@@ -195,7 +195,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
           required_status_checks+: [
             "verify-pr"
           ],
@@ -203,7 +202,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-cpp') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for C++",
@@ -215,7 +213,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
           required_status_checks+: [
             "CI status checks"
           ],
@@ -227,6 +224,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
           ],
         },
         orgs.newBranchProtectionRule('up-v1.5.7') {
+          required_approving_review_count: 1,
           required_status_checks+: [
             "CI status checks"
           ],
@@ -250,7 +248,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-java') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Java",
@@ -262,7 +259,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
           required_status_checks+: [
             "lint",
             "verify-pr"
@@ -271,7 +267,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-kotlin') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
         "java-kotlin"
@@ -287,7 +282,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-player-cpp') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "uProtocol Recorder",
       topics+: [
@@ -297,7 +291,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-python') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
         "actions",
@@ -314,7 +307,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
           required_status_checks+: [
             "Test with coverage",
             "lint"
@@ -323,7 +315,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-recorder-cpp') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "uProtocol Recorder",
       topics+: [
@@ -333,7 +324,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-rust') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
         "actions"
@@ -349,14 +339,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       variables: [
       ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-        },
-      ],
+      branch_protection_rules: [],
     },
     orgs.newRepo('up-simulator') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -364,7 +349,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-simulator-proxy') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -377,7 +361,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-spec') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       code_scanning_default_languages+: [
@@ -391,14 +374,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "uprotocol"
       ],
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-        },
-      ],
+      branch_protection_rules: [],
     },
     orgs.newRepo('up-streamer-rust') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
         "actions"
@@ -419,14 +397,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "usubscription"
       ],
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-        },
-      ],
+      branch_protection_rules: [],
     },
     orgs.newRepo('up-tck') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
         "python"
@@ -436,7 +409,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-tools') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Repository for code generators and other uProtocol tools",
       web_commit_signoff_required: false,
@@ -454,7 +426,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
           required_status_checks+: [
             "build"
           ],
@@ -502,7 +473,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-mqtt5-rust') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
@@ -510,7 +480,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
     },
     orgs.newRepo('up-transport-socket') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Simple socket implementations of uTransport written in C++, Rust, Python, and Java to test uE-2-uE communication",
       topics+: [
@@ -536,7 +505,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-vsomeip-cpp') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "C++ uPClient for vsomeip (SOME/IP)",
       topics+: [
@@ -559,7 +527,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-vsomeip-rust') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Rust uPClient for vsomeip (SOME/IP)",
       topics+: [
@@ -571,7 +538,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-zenoh-cpp') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
       topics+: [
@@ -583,13 +549,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
           required_status_checks+: [
             "CI status checks"
           ],
         },
         orgs.newBranchProtectionRule('v*.*_up-v*.*.*') {
-          required_approving_review_count: 1,
           required_status_checks+: [
             "CI status checks"
           ],
@@ -612,7 +576,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-zenoh-rust') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
         "actions"
@@ -640,7 +603,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-zenoh-example-cpp') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "C++ Example application and service that utilizes up-transport-zenoh-cpp",
       topics+: [
@@ -663,7 +625,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-iceoryx2-rust') {
-      allow_merge_commit: true,
       allow_update_branch: false,
       description: "Rust uTransport implementation for iceoryx2",
       web_commit_signoff_required: false,
