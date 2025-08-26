@@ -10,7 +10,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "~DEFAULT_BRANCH"
       ],
       requires_linear_history: true,
-      required_pull_request+: {
+      required_pull_request: orgs.newPullRequest() {
         required_approving_review_count: 0,
         requires_review_thread_resolution: true
       }
