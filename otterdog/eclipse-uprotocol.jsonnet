@@ -11,7 +11,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
       requires_linear_history: true,
       required_pull_request+: {
-        required_approving_review_count: 1,
+        required_approving_review_count: 0,
       }
     },
     orgs.newOrgRuleset('pull_request_settings') {
