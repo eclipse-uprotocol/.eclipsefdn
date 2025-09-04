@@ -693,6 +693,21 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
           required_approving_review_count: 1,
         },
       ],
+    },
+    orgs.newRepo('symphony-target-example-rust') {
+      allow_update_branch: false,
+      description: "Example implementation of Eclipse Symphony Target using Rust",
+      web_commit_signoff_required: false,
+      topics+: [
+        "rust",
+        "uprotocol",
+        "symphony"
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+        },
+      ],
     }
   ],
 }
