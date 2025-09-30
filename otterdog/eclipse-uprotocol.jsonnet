@@ -281,6 +281,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
             "lint",
             "verify-pr"
           ],
+          bypass_pull_request_allowances: [
+            "@eclipse-uprotocol-bot"
+          ]
         },
       ],
     },
@@ -507,6 +510,16 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "uprotocol"
       ],
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_status_checks+: [
+            "verify-pr"
+          ],
+          bypass_pull_request_allowances: [
+            "@eclipse-uprotocol-bot"
+          ]
+        },
+      ],
     },
     orgs.newRepo('up-transport-mqtt5-python') {
       allow_update_branch: false,
