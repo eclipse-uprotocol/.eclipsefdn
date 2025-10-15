@@ -1,6 +1,13 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
+  teams+: [
+    orgs.newTeam('merge-bypass') {
+      members+: [
+        "eclipse-uprotocol-bot",
+      ],
+    },
+  ],
   rulesets+: [
     orgs.newOrgRuleset('default_pr_settings') {
       include_repo_names: [
@@ -13,7 +20,10 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       required_pull_request: orgs.newPullRequest() {
         required_approving_review_count: 0,
         requires_review_thread_resolution: true
-      }
+      },
+      bypass_actors+: [
+        "@eclipse-uprotocol/merge-bypass"
+      ],
     },
   ],
   settings+: {
@@ -282,7 +292,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
             "verify-pr"
           ],
           bypass_pull_request_allowances: [
-            "@eclipse-uprotocol-bot"
+            "@eclipse-uprotocol/merge-bypass"
           ]
         },
       ],
