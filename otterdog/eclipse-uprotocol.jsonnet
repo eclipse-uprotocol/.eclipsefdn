@@ -387,6 +387,29 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         },
       ],
     },
+    orgs.newRepo('up-rust-py') {
+      allow_update_branch: false,
+#      code_scanning_default_languages+: [
+#        "python",
+#        "rust"
+#      ],
+      code_scanning_default_setup_enabled: true,
+      delete_branch_on_merge: false,
+      description: "Python bindings for the uProtocol Language Library for Rust",
+      topics+: [
+        "core",
+        "python",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+      variables: [
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+        },
+      ],
+    },
     orgs.newRepo('up-simulator') {
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
