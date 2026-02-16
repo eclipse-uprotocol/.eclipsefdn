@@ -394,6 +394,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
 #        "rust"
 #      ],
       code_scanning_default_setup_enabled: true,
+      default_branch: "main",
       delete_branch_on_merge: false,
       description: "Python bindings for the uProtocol Language Library for Rust",
       topics+: [
