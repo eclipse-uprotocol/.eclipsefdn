@@ -1,0 +1,6 @@
+id: pin-all-actions
+name: Pin GitHub actions in all repositories
+description: |-
+  This blueprint pins GitHub actions used in workflows to their corresponding commit hash.
+type: pin_workflow
+config:
