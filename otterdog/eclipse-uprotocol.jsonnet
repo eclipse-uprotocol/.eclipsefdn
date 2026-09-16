@@ -117,12 +117,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('up-akka') {
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Implementation on Kalix",
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('up-android-core') {
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
@@ -516,24 +510,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('up-transport-android-kotlin') {
-      allow_update_branch: false,
-      code_scanning_default_setup_enabled: true,
-      description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-android-rust') {
-      allow_update_branch: false,
-      code_scanning_default_setup_enabled: true,
-      description: "Rust client side Library for Android implementation of uProtocol",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-azure-java') {
-      allow_update_branch: false,
-      code_scanning_default_setup_enabled: true,
-      description: "Java client side Library to build uEs that will run on Azure",
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('up-transport-mqtt5-java') {
       allow_update_branch: false,
       description: "Java uPClient for MQTT5",
@@ -555,17 +531,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('up-transport-mqtt5-python') {
-      allow_update_branch: false,
-      description: "Python uPClient for MQTT5 to be used by up-simulator and others",
-      topics+: [
-        "mqtt5",
-        "python",
-        "up-transport",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('up-transport-mqtt5-rust') {
       allow_update_branch: false,
       description: "Rust client to communicate with a MQTT5 broker",
@@ -585,17 +550,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "python",
         "rust",
         "socket",
-        "up-transport",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-springboot-java') {
-      allow_update_branch: false,
-      description: "Springboot implementation of uProtocol that could be used for development of cloud microservices",
-      topics+: [
-        "java",
-        "springboot",
         "up-transport",
         "uprotocol"
       ],
@@ -633,6 +587,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "vsomeip"
       ],
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+        },
+      ],
     },
     orgs.newRepo('up-transport-zenoh-cpp') {
       allow_update_branch: false,
@@ -710,17 +669,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       topics+: [
         "cpp",
         "example",
-        "uprotocol",
-        "zenoh"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-zenoh-example-rust') {
-      allow_update_branch: false,
-      description: "Example code for zenoh using up-transport-zenoh-rust",
-      topics+: [
-        "example",
-        "rust",
         "uprotocol",
         "zenoh"
       ],
